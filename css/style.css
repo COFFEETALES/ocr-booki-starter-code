@@ -129,7 +129,7 @@ header:nth-of-type(1) > div:nth-of-type(1) {
     color: #000;
     display: block;
     overflow: hidden;
-    padding: 10px 12px 0 12px;
+    padding: 10px 12px 20px 12px;
     text-align: center;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -144,6 +144,52 @@ header:nth-of-type(1) > div:nth-of-type(1) {
     border-image-source: linear-gradient(to bottom, var(--main-color), var(--filter-bg-color));
     color: var(--main-color);
     font-weight: 600;
+}
+
+/****** Formulaire de recherche de l'hébergement Booki ***********/
+#destination-search-form {
+    align-items: center;
+    background-color: var(--main-bg-color);
+    border-radius: 30px;
+    display: inline-flex;
+    margin: 0 0 26px 0;
+    overflow: hidden;
+}
+
+#destination-search-form > label:nth-of-type(1) {
+    border-bottom-left-radius: 30px;
+    border-top-left-radius: 30px;
+    color: #000;
+    cursor: pointer;
+    font-size: 1.2em;
+    padding: 0 10px 0 15px;
+    min-width: 1ch;
+}
+
+#destination-search-form > input[type="text"]:nth-of-type(1) {
+    background-color: #fff;
+    border-color: var(--main-bg-color);
+    border-style: solid;
+    border-width: 1px 0;
+    font-size: 1em;
+    outline: none;
+    padding: 10px 15px;
+    width: 200px;
+}
+
+#destination-search-form > button:nth-of-type(1) {
+    background-color: var(--main-color);
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+    border: 1px solid var(--main-color);
+    color: #fff;
+    cursor: pointer;
+    font-size: 1em;
+    padding: 10px 20px;
+}
+
+#destination-search-form > button:nth-of-type(1):hover {
+    text-decoration: underline;
 }
 
 /****** Hebergements And Populaires ***********/
