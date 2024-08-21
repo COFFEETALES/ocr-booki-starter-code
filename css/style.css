@@ -1,3 +1,5 @@
+/* vim: set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab : */
+
 /****** General ***********/
 * {
     font-family: 'Raleway', sans-serif;
@@ -56,6 +58,92 @@ a {
 
 .neutral-star {
     color: var(--main-bg-color)
+}
+
+/****** En-tête de la page html ***********/
+header:nth-of-type(1) {
+    display: flex;
+    flex-direction: column;
+    padding: 0 12px 0 12px;
+}
+
+header:nth-of-type(1) > div:nth-of-type(1) {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 100px;
+    /*      ^^^ Valeur empirique pour tester l'alignement vertical */
+}
+
+#header-logo-booki {
+    /* background-color: rgba(255, 0, 0, 0.3); */
+    /* ^ Debug */
+    align-self: center;
+    box-sizing: border-box;
+    flex-grow: 0;
+    position: relative;
+    width: 100px;
+}
+
+#header-logo-booki > img:nth-of-type(1) {
+    object-fit: scale-down;
+    width: 100%;
+}
+
+#header-navigation-bar {
+    /* background-color: rgba(0, 255, 0, 0.3); */
+    /* ^ Debug */
+    align-self: stretch;
+    color: blue;
+}
+
+#header-navigation-bar > ul:nth-of-type(1) {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    list-style-type: none;
+    margin: 0;
+    min-width: calc(160px * 4);
+    padding: 0;
+}
+
+#header-navigation-bar > ul:nth-of-type(1) > li {
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+    overflow: hidden;
+}
+
+#header-navigation-bar > ul:nth-of-type(1) > li > a:nth-of-type(1):link,
+#header-navigation-bar > ul:nth-of-type(1) > li > a:nth-of-type(1):visited {
+    /* background-color: rgba(0, 0, 255, 0.3); */
+    /* ^ Debug */
+    border-image-repeat: stretch;
+    border-image-slice: 100 1 1 1;
+    border-image-source: none;
+    border-image-width: 4px 0 0 0;
+    border-top-color: transparent;
+    border-top-style: solid;
+    border-top-width: 4px;
+    box-sizing: border-box;
+    color: #000;
+    display: block;
+    overflow: hidden;
+    padding: 10px 12px 0 12px;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#header-navigation-bar > ul:nth-of-type(1) > li > a:nth-of-type(1):hover {
+    border-image-source: linear-gradient(to bottom, var(--main-color), var(--filter-bg-color));
+}
+
+#header-navigation-bar > ul:nth-of-type(1) > li > a:nth-of-type(1):active,
+#header-navigation-bar > ul:nth-of-type(1) > li > a:nth-of-type(1):focus {
+    border-image-source: linear-gradient(to bottom, var(--main-color), var(--filter-bg-color));
+    color: var(--main-color);
+    font-weight: 600;
 }
 
 /****** Hebergements And Populaires ***********/
