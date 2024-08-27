@@ -121,7 +121,7 @@ header:nth-of-type(1) > div:nth-of-type(1) {
     border-image-repeat: stretch;
     border-image-slice: 100 1 1 1;
     border-image-source: none;
-    border-image-width: 4px 0 0 0;
+    border-image-width: 3px 0 0 0;
     border-top-color: transparent;
     border-top-style: solid;
     border-top-width: 4px;
@@ -129,21 +129,21 @@ header:nth-of-type(1) > div:nth-of-type(1) {
     color: #000;
     display: block;
     overflow: hidden;
-    padding: 10px 12px 20px 12px;
+    padding: 10px 12px 15px 12px;
     text-align: center;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 
 #header-navigation-bar > ul:nth-of-type(1) > li > a:nth-of-type(1):hover {
-    border-image-source: linear-gradient(to bottom, var(--main-color), var(--filter-bg-color));
+    border-image-source: linear-gradient(to bottom, var(--main-color), #65a1fc);
+    text-decoration: underline;
 }
 
 #header-navigation-bar > ul:nth-of-type(1) > li > a:nth-of-type(1):active,
 #header-navigation-bar > ul:nth-of-type(1) > li > a:nth-of-type(1):focus {
-    border-image-source: linear-gradient(to bottom, var(--main-color), var(--filter-bg-color));
+    border-image-source: linear-gradient(to bottom, var(--main-color), #65a1fc);
     color: var(--main-color);
-    font-weight: 600;
 }
 
 /****** Formulaire de recherche de l'hébergement Booki ***********/
