@@ -154,6 +154,7 @@ header:nth-of-type(1) p {
     color: var(--main-color);
 }
 
+
 /****** Formulaire de recherche de l'hébergement Booki ***********/
 #destination-search-form {
     display: inline-flex;
@@ -201,6 +202,58 @@ header:nth-of-type(1) p {
 
 #destination-search-form > button:nth-of-type(1):hover {
     text-decoration: underline;
+}
+
+
+/****** Filtres placés dans l'en-tête ***********/
+#header-filters {
+    display: flex;
+    gap: 10px;
+    margin: 34px 0 38px 0;
+}
+
+#header-filters > ul:nth-of-type(1) {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    list-style-type: none;
+    margin: 0;
+    min-width: calc(160px * 4);
+    padding: 0;
+}
+
+#header-filters > ul:nth-of-type(1) > li {
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+    white-space: nowrap;
+}
+
+#header-filters input[type=checkbox] {
+    display: none;
+}
+
+#header-filters input[type=checkbox]+label {
+    background-color: white;
+    border-radius: 20px;
+    border: 2px solid #ccc;
+    cursor: pointer;
+    font-weight: 600;
+    padding: 14px 18px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+#header-filters input[type=checkbox]+label:hover {
+    border-color: #000;
+}
+
+#header-filters input[type=checkbox]+label > .icon {
+    color: var(--main-color);
+    margin-right: 8px;
+}
+
+#header-filters input[type=checkbox]:checked+label {
+    background-color: var(--filter-bg-color);
 }
 
 /****** Hebergements And Populaires ***********/

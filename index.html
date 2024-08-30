@@ -44,6 +44,37 @@
                     <button type="submit">Rechercher</button>
                 </form>
             </section>
+            <section>
+                <h2 class="section-title">Filtres</h2>
+                <nav id="header-filters">
+                    <ul>
+                        <li>
+                            <input type="checkbox" name="options" id="cb-economic">
+                            <label tabindex="0" for="cb-economic" onkeypress="event.preventDefault(); event.currentTarget.click()">
+                                <i class="fas fa-money-bill-wave icon"></i> Économique
+                            </label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="options" id="cb-family">
+                            <label tabindex="0" for="cb-family" onkeypress="event.preventDefault(); event.currentTarget.click()">
+                                <i class="fas fa-users icon"></i> Familial
+                            </label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="options" id="cb-romantic">
+                            <label tabindex="0" for="cb-romantic" onkeypress="event.preventDefault(); event.currentTarget.click()">
+                                <i class="fas fa-heart icon"></i> Romantique
+                            </label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="options" id="cb-hidden-gems">
+                            <label tabindex="0" for="cb-hidden-gems" onkeypress="event.preventDefault(); event.currentTarget.click()">
+                                <i class="fas fa-fire icon"></i> Nos pépites
+                            </label>
+                        </li>
+                    </ul>
+                </nav>
+            </section>
         </header>
         <main>
             <div class="hebergements-and-populaires">
