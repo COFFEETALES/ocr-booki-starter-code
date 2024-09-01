@@ -207,22 +207,28 @@ header:nth-of-type(1) p {
 
 /****** Filtres placés dans l'en-tête ***********/
 #header-filters {
+    align-items: center;
     display: flex;
+    flex-direction: row;
     gap: 10px;
     margin: 34px 0 38px 0;
 }
 
-#header-filters > ul:nth-of-type(1) {
+#header-filters h2:nth-of-type(1) {
+    font-size: 1.1em;
+    margin: 0;
+}
+
+#header-filters ul:nth-of-type(1) {
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 10px;
     list-style-type: none;
     margin: 0;
-    min-width: calc(160px * 4);
     padding: 0;
 }
 
-#header-filters > ul:nth-of-type(1) > li {
+#header-filters ul:nth-of-type(1) > li {
     flex-basis: 0;
     flex-grow: 1;
     flex-shrink: 1;
@@ -230,30 +236,75 @@ header:nth-of-type(1) p {
 }
 
 #header-filters input[type=checkbox] {
-    display: none;
-}
-
-#header-filters input[type=checkbox]+label {
+    align-items: center;
+    appearance: none;
     background-color: white;
     border-radius: 20px;
     border: 2px solid #ccc;
     cursor: pointer;
+    display: inline-flex;
+    font-size: 1.1em;
     font-weight: 600;
-    padding: 14px 18px;
+    line-height: 1.0;
+    padding: 14px 20px;
     transition: background-color 0.3s, border-color 0.3s;
 }
 
-#header-filters input[type=checkbox]+label:hover {
+/* https://docs.fontawesome.com/web/add-icons/pseudo-elements */
+
+#header-filters input[type=checkbox]::before {
+    -webkit-font-smoothing: antialiased;
+    color: var(--main-color);
+    display: inline-block;
+    font: var(--fa-font-solid);
+    margin: 0 12px 0 0;
+    padding: 0;
+    text-rendering: auto;
+}
+
+#header-filters input[type=checkbox]::after {
+    margin: 0;
+    padding: 0;
+}
+
+#header-filters input[type=checkbox]:hover {
     border-color: #000;
 }
 
-#header-filters input[type=checkbox]+label > .icon {
-    color: var(--main-color);
-    margin-right: 8px;
+#header-filters input[type=checkbox]:checked {
+    background-color: var(--filter-bg-color);
 }
 
-#header-filters input[type=checkbox]:checked+label {
-    background-color: var(--filter-bg-color);
+#header-filters #cb-economic::before {
+    content: '\f53a';
+}
+
+#header-filters #cb-economic::after {
+    content: 'Économique';
+}
+
+#header-filters #cb-family::before {
+    content: '\f0c0';
+}
+
+#header-filters #cb-family::after {
+    content: 'Familial';
+}
+
+#header-filters #cb-romantic::before {
+    content: '\f004';
+}
+
+#header-filters #cb-romantic::after {
+    content: 'Romantique';
+}
+
+#header-filters #cb-hidden-gems::before {
+    content: '\f06d';
+}
+
+#header-filters #cb-hidden-gems::after {
+    content: 'Nos pépites';
 }
 
 /****** Hebergements And Populaires ***********/
