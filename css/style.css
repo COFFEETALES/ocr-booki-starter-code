@@ -268,7 +268,7 @@ header:nth-of-type(1) p {
     white-space: nowrap;
 }
 
-#header-filters input[type=checkbox] {
+#header-filters input[type="checkbox"] {
     align-items: center;
     appearance: none;
     background-color: white;
@@ -279,13 +279,14 @@ header:nth-of-type(1) p {
     font-size: 1.1em;
     font-weight: 600;
     line-height: 1.0;
+    margin: 0;
     padding: 14px 20px;
     transition: background-color 0.3s, border-color 0.3s;
 }
 
 /* https://docs.fontawesome.com/web/add-icons/pseudo-elements */
 
-#header-filters input[type=checkbox]::before {
+#header-filters input[type="checkbox"]::before {
     -webkit-font-smoothing: antialiased;
     color: var(--main-color);
     display: inline-block;
@@ -295,16 +296,16 @@ header:nth-of-type(1) p {
     text-rendering: auto;
 }
 
-#header-filters input[type=checkbox]::after {
+#header-filters input[type="checkbox"]::after {
     margin: 0;
     padding: 0;
 }
 
-#header-filters input[type=checkbox]:hover {
+#header-filters input[type="checkbox"]:hover {
     border-color: #000;
 }
 
-#header-filters input[type=checkbox]:checked {
+#header-filters input[type="checkbox"]:checked {
     background-color: var(--filter-bg-color);
 }
 
@@ -368,13 +369,11 @@ header:nth-of-type(1) p {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-content: space-between;
-    margin-top: 33px;
     width: 100%;
-    height: 80%;
 }
 
 .hebergements-cards .card {
+    margin-top: 33px;
     display: flex;
     flex-direction: column;
 }
@@ -481,39 +480,44 @@ header:nth-of-type(1) p {
 }
 
 #activities-in-marseille .activities-cards {
-    align-content: space-between;
     display: flex;
     flex-wrap: wrap;
     height: 80%;
-    justify-content: space-between;
     margin-top: 33px;
     width: 100%;
+    gap: 20px;
 }
 
 #activities-in-marseille .activities-cards .card {
     display: flex;
     flex-direction: column;
+    height: 450px;
     padding: 0;
+    width: 300px;
 }
 
 #activities-in-marseille .activities-cards img {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    height: 400px;
-    width: 300px;
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+    overflow: hidden;
 }
 
 #activities-in-marseille .activities-cards .card-content {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     padding-left: 15px;
+    height: 4em;
 }
 
 #activities-in-marseille .activities-cards .card-title {
     margin-bottom: 20px;
     margin-top: 21px;
+    white-space: normal;
 }
 
 /****** Pied de la page html ***********/
@@ -526,7 +530,7 @@ footer {
 footer > section {
     display: flex;
     flex-direction: row;
-    gap: 270px;
+    gap: 20%;
     justify-content: start;
     padding: 0 20px;
 }
@@ -546,6 +550,12 @@ footer > section > div {
 /****** Media queries ***********/
 /* Medium devices (tablets, less/equal than 1024px) */
 @media (max-width: 1024px) {
+    #header-filters > div:nth-of-type(1) {
+        align-items: start;
+        flex-direction: column;
+        gap: 15px;
+    }
+
     .hebergements-and-populaires {
         flex-direction: column;
     }
@@ -575,6 +585,11 @@ footer > section > div {
 
     .populaires-cards .card-subtitle {
         font-size: 13px;
+    }
+
+    #activities-in-marseille .activities-cards .card {
+        height: 250px;
+        width: 180px;
     }
 }
 
