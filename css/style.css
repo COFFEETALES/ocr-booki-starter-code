@@ -18,6 +18,7 @@
 body {
     display: flex;
     justify-content: center;
+    margin-bottom: 0;
     margin-top: 2px;
 }
 
@@ -499,6 +500,31 @@ header:nth-of-type(1) p {
 #activities-in-marseille .activities-cards .card-title {
     margin-bottom: 20px;
     margin-top: 21px;
+}
+
+/****** Pied de la page html ***********/
+footer {
+    background-color: var(--main-bg-color);
+    margin: 40px 0 0 0;
+    padding: 18px 0 30px 0;
+}
+
+footer > section {
+    display: flex;
+    flex-direction: row;
+    gap: 270px;
+    justify-content: start;
+    padding: 0 20px;
+}
+
+footer > section > div > h3 {
+    margin: 0 0;
+}
+
+footer > section > div {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
 }
 
 /* Le code ci-dessous correspond à la version responsive uniquement */
