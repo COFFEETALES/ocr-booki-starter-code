@@ -124,10 +124,8 @@ header:nth-of-type(1) p {
     overflow: hidden;
 }
 
-#header-navigation-bar > ul:nth-of-type(1) > li > a:nth-of-type(1):link,
-#header-navigation-bar > ul:nth-of-type(1) > li > a:nth-of-type(1):visited {
-    /* background-color: rgba(0, 0, 255, 0.3); */
-    /* ^ Debug */
+#header-navigation-bar > ul:nth-of-type(1) > li > input[type="radio"] {
+    appearance: none;
     border-image-repeat: stretch;
     border-image-slice: 100 1 1 1;
     border-image-source: none;
@@ -137,25 +135,41 @@ header:nth-of-type(1) p {
     border-top-width: 4px;
     box-sizing: border-box;
     color: #000;
+    cursor: pointer;
     display: block;
     overflow: hidden;
-    padding: 10px 12px 15px 12px;
+    padding: 14px 12px 15px 12px;
     text-align: center;
     text-overflow: ellipsis;
     white-space: nowrap;
+    width: 100%;
 }
 
-#header-navigation-bar > ul:nth-of-type(1) > li > a:nth-of-type(1):hover {
+#header-navigation-bar > ul:nth-of-type(1) > li > input[type="radio"]:hover {
     border-image-source: linear-gradient(to bottom, var(--main-color), #65a1fc);
     text-decoration: underline;
 }
 
-#header-navigation-bar > ul:nth-of-type(1) > li > a:nth-of-type(1):active,
-#header-navigation-bar > ul:nth-of-type(1) > li > a:nth-of-type(1):focus {
+#header-navigation-bar > ul:nth-of-type(1) > li > input[type="radio"]:checked {
     border-image-source: linear-gradient(to bottom, var(--main-color), #65a1fc);
     color: var(--main-color);
 }
 
+#header-navigation-bar #nav-home::before {
+    content: 'Accueil';
+}
+
+#header-navigation-bar #nav-hosting::before {
+    content: 'Hébergements';
+}
+
+#header-navigation-bar #nav-activities::before {
+    content: 'Activités';
+}
+
+#header-navigation-bar #nav-contact::before {
+    content: 'Contact';
+}
 
 /****** Formulaire de recherche de l'hébergement Booki ***********/
 #destination-search-form {
