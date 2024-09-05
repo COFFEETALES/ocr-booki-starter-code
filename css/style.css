@@ -18,6 +18,7 @@
 body {
     display: flex;
     justify-content: center;
+    margin-top: 2px;
 }
 
 .main-container {
@@ -129,7 +130,7 @@ header:nth-of-type(1) p {
     border-image-repeat: stretch;
     border-image-slice: 100 1 1 1;
     border-image-source: none;
-    border-image-width: 3px 0 0 0;
+    border-image-width: 6px 0 0 0;
     border-top-color: transparent;
     border-top-style: solid;
     border-top-width: 4px;
@@ -442,8 +443,63 @@ header:nth-of-type(1) p {
     margin-bottom: 5px;
 }
 
+/****** Activités à Marseille ***********/
+#activities-in-marseille {
+    display: flex;
+    justify-content: space-between;
+}
 
+#activities-in-marseille > section:nth-of-type(1) {
+    padding: 30px 30px 20px 30px;
+    box-sizing: border-box;
+}
 
+/****** Activités ***********/
+#activities-in-marseille > .activities {
+    width: 100%;
+}
+
+#activities-in-marseille .activities-title {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+#activities-in-marseille .activities-cards {
+    align-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    height: 80%;
+    justify-content: space-between;
+    margin-top: 33px;
+    width: 100%;
+}
+
+#activities-in-marseille .activities-cards .card {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+#activities-in-marseille .activities-cards img {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    height: 400px;
+    width: 300px;
+}
+
+#activities-in-marseille .activities-cards .card-content {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-left: 15px;
+}
+
+#activities-in-marseille .activities-cards .card-title {
+    margin-bottom: 20px;
+    margin-top: 21px;
+}
 
 /* Le code ci-dessous correspond à la version responsive uniquement */
 
