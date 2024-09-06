@@ -63,13 +63,13 @@ a {
 }
 
 /****** En-tête de la page html ***********/
-header:nth-of-type(1) {
+header {
     display: flex;
     flex-direction: column;
     padding: 0 12px 0 12px;
 }
 
-header:nth-of-type(1) > div:nth-of-type(1) {
+header > div:nth-of-type(1) {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -77,11 +77,11 @@ header:nth-of-type(1) > div:nth-of-type(1) {
     /*      ^^^ Valeur empirique pour tester l'alignement vertical */
 }
 
-header:nth-of-type(1) h2 {
+header h2 {
     margin: 10px 0 6px 0;
 }
 
-header:nth-of-type(1) p {
+header p {
     margin: 0;
 }
 
@@ -91,6 +91,7 @@ header:nth-of-type(1) p {
     align-self: center;
     box-sizing: border-box;
     flex-grow: 0;
+    flex-shrink: 0;
     position: relative;
     width: 100px;
 }
@@ -132,26 +133,29 @@ header:nth-of-type(1) p {
     border-image-width: 6px 0 0 0;
     border-top-color: transparent;
     border-top-style: solid;
-    border-top-width: 4px;
     box-sizing: border-box;
     color: #000;
     cursor: pointer;
     display: block;
+    margin: 0;
     overflow: hidden;
-    padding: 14px 12px 15px 12px;
+    padding: 18px 12px 18px 12px;
     text-align: center;
     text-overflow: ellipsis;
     white-space: nowrap;
     width: 100%;
 }
 
-#header-navigation-bar > ul:nth-of-type(1) > li > input[type="radio"]:hover {
+#header-navigation-bar > ul:nth-of-type(1) > li > input[type="radio"]:hover,
+#header-navigation-bar > ul:nth-of-type(1) > li > input[type="radio"]:checked {
     border-image-source: linear-gradient(to bottom, var(--main-color), #65a1fc);
+}
+
+#header-navigation-bar > ul:nth-of-type(1) > li > input[type="radio"]:hover {
     text-decoration: underline;
 }
 
 #header-navigation-bar > ul:nth-of-type(1) > li > input[type="radio"]:checked {
-    border-image-source: linear-gradient(to bottom, var(--main-color), #65a1fc);
     color: var(--main-color);
 }
 
@@ -175,7 +179,6 @@ header:nth-of-type(1) p {
 #destination-search-form {
     display: inline-flex;
     margin: 26px 0 30px 0;
-    overflow: hidden;
 }
 
 #destination-search-form > label:nth-of-type(1) {
@@ -202,6 +205,7 @@ header:nth-of-type(1) p {
     outline: none;
     padding: 15px 20px;
     width: 160px;
+    flex-grow: 1;
 }
 
 #destination-search-form > button:nth-of-type(1) {
@@ -214,6 +218,10 @@ header:nth-of-type(1) p {
     font-size: 1em;
     font-weight: 600;
     padding: 10px 20px;
+}
+
+#destination-search-form > button:nth-of-type(1)::before {
+    content: 'Rechercher';
 }
 
 #destination-search-form > button:nth-of-type(1):hover {
@@ -368,7 +376,7 @@ header:nth-of-type(1) p {
 .hebergements-cards {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 100%;
 }
 
@@ -530,9 +538,9 @@ footer {
 footer > section {
     display: flex;
     flex-direction: row;
-    gap: 20%;
-    justify-content: start;
+    justify-content: space-between;
     padding: 0 20px;
+    white-space: nowrap;
 }
 
 footer > section > div > h3 {
@@ -595,5 +603,87 @@ footer > section > div {
 
 /* Small devices (phones, less than 768px) */
 @media (max-width: 767.98px) {
-    /* ... */
+    body {
+        margin: 0;
+    }
+
+    .main-container {
+        max-width: none;
+        padding: 0;
+    }
+
+    header {
+        padding: 0;
+    }
+
+    header #header-logo-booki {
+        margin: 20px 0;
+    }
+
+    header > div:nth-of-type(1) {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+    }
+
+    #header-navigation-bar > ul:nth-of-type(1) {
+        gap: 0;
+        min-width: 0;
+        width: 100%;
+    }
+
+    #header-navigation-bar > ul:nth-of-type(1) > li > input[type="radio"] {
+        border-image-slice: 1 1 100 1;
+        border-image-source: linear-gradient(to top, var(--main-bg-color), #fff);
+        border-image-width: 0 0 6px 0;
+    }
+
+    #header-navigation-bar > ul:nth-of-type(1) > li > input[type="radio"]:hover,
+    #header-navigation-bar > ul:nth-of-type(1) > li > input[type="radio"]:checked {
+        border-image-source: linear-gradient(to top, var(--main-color), #65a1fc);
+    }
+
+    header > section {
+        padding: 0 40px;
+    }
+
+    header > section > h2:nth-of-type(1) {
+        margin-top: 33px;
+    }
+
+    #destination-search-form {
+        width: 100%;
+    }
+
+    #destination-search-form > button:nth-of-type(1) {
+        border-radius: 18px;
+        box-shadow: 0 3px 6px 0px rgba(0, 0, 0, 0.2);
+        margin-left: -15px;
+    }
+
+    #destination-search-form > button:nth-of-type(1)::before {
+        -webkit-font-smoothing: antialiased;
+        color: #fff;
+        content: '\f002';
+        font: var(--fa-font-solid);
+        text-rendering: auto;
+    }
+
+    #header-filters ul:nth-of-type(1) {
+        flex-wrap: wrap;
+        align-items: space-between;
+        justify-content: space-between;
+        position: relative;
+        gap: 0;
+    }
+
+    #header-filters ul:nth-of-type(1) > li {
+        flex-basis: 50%;
+        flex-grow: 0;
+        flex-shrink: 0;
+    }
+
+    #header-filters input[type="checkbox"] {
+        width: 100%;
+    }
 }
