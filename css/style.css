@@ -92,7 +92,6 @@ header p {
     box-sizing: border-box;
     flex-grow: 0;
     flex-shrink: 0;
-    position: relative;
     width: 100px;
 }
 
@@ -101,25 +100,17 @@ header p {
     width: 100%;
 }
 
-#header-navigation-bar {
-    /* background-color: rgba(0, 255, 0, 0.3); */
-    /* ^ Debug */
-    align-self: stretch;
-    color: blue;
-}
-
 #header-navigation-bar > ul:nth-of-type(1) {
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 40px;
     list-style-type: none;
     margin: 0;
-    min-width: calc(160px * 4);
     padding: 0;
 }
 
 #header-navigation-bar > ul:nth-of-type(1) > li {
-    flex-basis: 0;
+    flex-basis: auto;
     flex-grow: 1;
     flex-shrink: 1;
     overflow: hidden;
@@ -260,6 +251,11 @@ header p {
     margin: 0;
 }
 
+#header-filters nav:nth-of-type(1) {
+    display: block;
+    width: 100%;
+}
+
 #header-filters ul:nth-of-type(1) {
     display: flex;
     flex-direction: row;
@@ -270,10 +266,10 @@ header p {
 }
 
 #header-filters ul:nth-of-type(1) > li {
-    flex-basis: 0;
-    flex-grow: 1;
+    flex-basis: auto;
+    flex-grow: 0;
     flex-shrink: 1;
-    white-space: nowrap;
+    overflow-x: hidden;
 }
 
 #header-filters input[type="checkbox"] {
@@ -283,13 +279,17 @@ header p {
     border-radius: 20px;
     border: 2px solid #ccc;
     cursor: pointer;
-    display: inline-flex;
+    display: block;
     font-size: 1.1em;
     font-weight: 600;
     line-height: 1.0;
     margin: 0;
+    overflow: hidden;
     padding: 14px 20px;
+    text-overflow: ellipsis;
     transition: background-color 0.3s, border-color 0.3s;
+    white-space: nowrap;
+    width: 100%;
 }
 
 /* https://docs.fontawesome.com/web/add-icons/pseudo-elements */
@@ -376,12 +376,18 @@ header p {
 .hebergements-cards {
     display: flex;
     flex-wrap: wrap;
+    gap: 25px;
     justify-content: space-around;
+    padding-top: 33px;
     width: 100%;
 }
 
+.hebergements-cards > a {
+    display: block;
+    width: calc(1.0 / 3.0 * 100% - 25px);
+}
+
 .hebergements-cards .card {
-    margin-top: 33px;
     display: flex;
     flex-direction: column;
 }
@@ -390,7 +396,6 @@ header p {
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     height: 115px;
-    width: 250px;
 }
 
 .hebergements-cards .card-content {
@@ -431,9 +436,20 @@ header p {
     align-items: center;
 }
 
+.populaires-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    justify-content: space-between;
+    padding-top: 33px;
+}
+
+.populaires-cards > a {
+    display: block;
+}
+
 .populaires-cards .card {
     display: flex;
-    margin-top: 33px;
 }
 
 .populaires-cards img {
@@ -466,19 +482,9 @@ header p {
 }
 
 /****** Activités à Marseille ***********/
-#activities-in-marseille {
-    display: flex;
-    justify-content: space-between;
-}
-
 #activities-in-marseille > section:nth-of-type(1) {
     padding: 30px 30px 20px 30px;
     box-sizing: border-box;
-}
-
-/****** Activités ***********/
-#activities-in-marseille > .activities {
-    width: 100%;
 }
 
 #activities-in-marseille .activities-title {
@@ -490,10 +496,13 @@ header p {
 #activities-in-marseille .activities-cards {
     display: flex;
     flex-wrap: wrap;
-    height: 80%;
-    margin-top: 33px;
-    width: 100%;
     gap: 20px;
+    margin-top: 33px;
+}
+
+#activities-in-marseille .activities-cards > a {
+    display: block;
+    width: calc(1.0 / 4.0 * 100% - 20px);
 }
 
 #activities-in-marseille .activities-cards .card {
@@ -501,7 +510,6 @@ header p {
     flex-direction: column;
     height: 450px;
     padding: 0;
-    width: 300px;
 }
 
 #activities-in-marseille .activities-cards img {
@@ -551,6 +559,7 @@ footer > section > div {
     display: flex;
     flex-direction: column;
     gap: 13px;
+    width: calc(1.0 / 3.0 * 100%);
 }
 
 /* Le code ci-dessous correspond à la version responsive uniquement */
@@ -581,10 +590,12 @@ footer > section > div {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        padding-top: 33px;
+        gap: 25px;
     }
 
-    .populaires-cards a {
-        width: 30%;
+    .populaires-cards > a {
+        width: calc(1.0 / 3.0 * 100% - 25px);
     }
 
     .populaires-cards .card-title {
@@ -597,7 +608,6 @@ footer > section > div {
 
     #activities-in-marseille .activities-cards .card {
         height: 250px;
-        width: 180px;
     }
 }
 
@@ -669,11 +679,11 @@ footer > section > div {
         text-rendering: auto;
     }
 
+/*
     #header-filters ul:nth-of-type(1) {
         flex-wrap: wrap;
         align-items: space-between;
         justify-content: space-between;
-        position: relative;
         gap: 0;
     }
 
@@ -686,4 +696,5 @@ footer > section > div {
     #header-filters input[type="checkbox"] {
         width: 100%;
     }
+*/
 }
