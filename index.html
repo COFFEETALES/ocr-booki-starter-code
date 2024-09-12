@@ -24,7 +24,11 @@
             <!-- Une interprétation parfaitement libre du header Booki -->
             <div>
                 <div id="header-logo-booki">
-                    <img src="./images/logo/Booki.png" alt="Booki">
+                    <picture>
+                        <source media="(max-width: 1024px)" srcset="./images/logo/Booki.png">
+                        <source media="(min-width: 1025px)" srcset="./images/logo/Booki@3x.png">
+                        <img src="./images/logo/Booki@3x.png" alt="Booki">
+                    </picture>
                 </div>
                 <nav id="header-navigation-bar">
                     <ul>

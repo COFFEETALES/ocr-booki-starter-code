@@ -95,7 +95,7 @@ header p {
     width: 100px;
 }
 
-#header-logo-booki > img:nth-of-type(1) {
+#header-logo-booki img:nth-of-type(1) {
     object-fit: scale-down;
     width: 100%;
 }
@@ -191,12 +191,13 @@ header p {
     border-color: var(--main-bg-color);
     border-style: solid;
     border-width: 1px 0;
+    flex-grow: 1;
     font-size: 1em;
     font-weight: 600;
+    min-width: 0;
     outline: none;
     padding: 15px 20px;
     width: 160px;
-    flex-grow: 1;
 }
 
 #destination-search-form > button:nth-of-type(1) {
@@ -615,6 +616,7 @@ footer > section > div {
 
     .main-container {
         max-width: none;
+        min-width: 240px;
         padding: 0;
     }
 
@@ -623,7 +625,8 @@ footer > section > div {
     }
 
     header #header-logo-booki {
-        margin: 20px 0;
+        margin: 25px 0 5px 0;
+        width: 60px;
     }
 
     header > div:nth-of-type(1) {
@@ -650,7 +653,7 @@ footer > section > div {
     }
 
     header > section {
-        padding: 0 40px;
+        padding: 0 28px;
     }
 
     header > section > h2:nth-of-type(1) {
@@ -683,14 +686,17 @@ footer > section > div {
 
     #header-filters ul:nth-of-type(1) {
         flex-wrap: wrap;
-        gap: 25px;
+        gap: 18px;
     }
 
     #header-filters ul:nth-of-type(1) > li {
-        flex-basis: auto;
         flex-grow: 1;
         flex-shrink: 0;
-        width: calc(1.0 / 2.0 * 100% - 25px);
+        width: calc(1.0 / 2.0 * 100% - 18px);
+    }
+
+    #header-filters input[type="checkbox"] {
+        font-size: 0.8em;
     }
 
     .hebergements-and-populaires {
@@ -727,7 +733,7 @@ footer > section > div {
     }
 
     #activities-in-marseille .activities-cards .card {
-        height: 250px;
+        height: 220px;
     }
 
     footer > section {
