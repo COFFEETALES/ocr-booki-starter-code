@@ -121,7 +121,7 @@ header p {
     border-image-repeat: stretch;
     border-image-slice: 100 1 1 1;
     border-image-source: none;
-    border-image-width: 6px 0 0 0;
+    border-image-width: 4px 0 0 0;
     border-top-color: transparent;
     border-top-style: solid;
     box-sizing: border-box;
@@ -130,7 +130,7 @@ header p {
     display: block;
     margin: 0;
     overflow: hidden;
-    padding: 18px 12px 18px 12px;
+    padding: 18px 0 18px 0;
     text-align: center;
     text-overflow: ellipsis;
     white-space: nowrap;
